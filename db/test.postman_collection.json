@@ -1,0 +1,195 @@
+{
+	"info": {
+		"_postman_id": "c7aa19a9-7e90-4a3c-b803-3bad4ce84e32",
+		"name": "test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "27001076"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Server check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001"
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get user profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNzI0NjU5OTk5LCJleHAiOjE3MjUxNzgzOTl9.FOTkfugys6H6CfDUNjGGqCUM6hzVsOdeK4napoaCmqw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3001/api/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register User",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "juned",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "pathan",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "junedpathan291@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "8160378226",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Juned@123",
+									"type": "text"
+								},
+								{
+									"key": "avatarurl",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Downloads/download.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "first_name",
+									"value": "Juned",
+									"type": "text"
+								},
+								{
+									"key": "last_name",
+									"value": "Pathan",
+									"type": "text"
+								},
+								{
+									"key": "mobile_number",
+									"value": "8160378226",
+									"type": "text"
+								},
+								{
+									"key": "avatarurl",
+									"type": "file",
+									"src": "/C:/Users/MY PC/Downloads/download.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/profile/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"profile",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"password\":\"Juned@123\",\r\n    \"email\":\"junedpathan291@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3001/api/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3001",
+							"path": [
+								"api",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
